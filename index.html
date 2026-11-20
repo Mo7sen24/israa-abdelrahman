@@ -702,7 +702,7 @@ html.so #fog i{animation-play-state:paused!important}
   cd();setInterval(cd,1000);
   var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},3200)}
   /* ===== RSVP → Google Sheet ===== */
-  var SHEET_URL='https://script.google.com/macros/s/AKfycbyZbGE6Lpw6979wavBYYeF7W5QDaCNA9TFedz266yH8YNC5S10tWD-ZaZRB6im1Xqst/exec'; /* رابط الـ Web App من Apps Script */
+  var SHEET_URL='https://script.google.com/macros/s/AKfycby_RpLG_lqgJDdxUTGUUdGljLcrv_YN4aykE10VQyppE-WHoHmXgs925aJ9OAnNzmr6/exec'; /* رابط الـ Web App من Apps Script */
   var QKEY='rsvp_pending_v1',busy=false;
   function uid(){try{if(crypto&&crypto.randomUUID)return crypto.randomUUID()}catch(e){}return Date.now().toString(36)+Math.random().toString(36).slice(2,10)}
   function qGet(){try{return JSON.parse(localStorage.getItem(QKEY)||'[]')||[]}catch(e){return []}}
