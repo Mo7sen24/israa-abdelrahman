@@ -324,6 +324,11 @@ svg.fl{width:34cqw;margin:.5em auto;color:#b0804d}
 #rest #p5t.ar .nm b{font-family:var(--story-title);font-weight:700;font-size:1.6em;letter-spacing:0;line-height:1.45}
 #rest #p5t.ar .nm i{font-family:var(--story-body);font-style:normal;font-weight:400;font-size:1.2em;margin:0 .35em}
 
+/* ===== المسجد والقاعة: عربي بنفس خط قسم حكايتنا (من --story-title / --story-body) ===== */
+#rest #p6t #vn,#rest #p3t #p3v,#rest #p6t #vc{direction:rtl;text-transform:none;letter-spacing:0!important;word-spacing:0;text-align:center}
+#rest #p6t #vn{font-family:var(--story-title)!important;font-weight:700!important;font-size:1.5em!important;line-height:1.5!important}
+#rest #p6t #vc{font-family:var(--story-body)!important;font-weight:500!important;font-size:1.15em!important;line-height:1.7!important}
+#rest #p3t #p3v{font-family:var(--story-body)!important;font-weight:500!important;font-size:1.1em!important;line-height:1.8!important}
 /* برنامج الحفل داخل الظرف */
 #rest section#p7.sec{display:block;text-shadow:none;aspect-ratio:736/1310;min-height:0;padding:0;gap:0;background:#e9dccd url(img05.jpg) center/100% 100% no-repeat}
 #rest #p7t{position:absolute!important;top:29%!important;bottom:22%;left:0;right:0;width:100%!important;padding:0 20cqw!important;display:flex;flex-direction:column;justify-content:center;font-size:4.4cqw}
@@ -680,7 +685,7 @@ html.so #fog i{animation-play-state:paused!important}
 <script>
 (function(){
   // === بيانات الدعوة: غيّرها من هنا بس ===
-  var C={n1:'Israa',n2:'Abdelrahman',date:'2026-11-27T20:30',end:'2026-11-27T22:00',venue:'Field Marshal Tantawi Mosque',city:'Al-Noor Hall',phone:'',
+  var C={n1:'Israa',n2:'Abdelrahman',date:'2026-11-27T20:30',end:'2026-11-27T22:00',venue:'مسجد المشير طنطاوي',city:'قاعة النور',phone:'',map:'https://maps.app.goo.gl/t7fvLN35WqqoFJHv7',
     prog:[['8:30 PM','Guests arrive'],['10:00 PM','Conclusion']]};
   var $=function(i){return document.getElementById(i)},L='en-US',D=new Date(C.date),ED=new Date(C.end),
       N=function(x){return x.toLocaleString(L,{useGrouping:false})},P=function(x){return(x<10?'0':'')+x};
@@ -690,7 +695,7 @@ html.so #fog i{animation-play-state:paused!important}
   $('my').textContent=D.toLocaleDateString(L,{month:'long',year:'numeric'});
   var te=ED.toLocaleTimeString(L,{hour:'numeric',minute:'2-digit'});$('tm').textContent='From '+ti+' to '+te;$('nd').textContent=dl;$('dl').textContent=dl;
   $('vn').textContent=C.venue;$('vc').textContent=C.city;$('vt').textContent='From '+ti+' to '+te;$('p3v').textContent=C.venue+' · '+C.city;
-  $('map').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(C.venue+' '+C.city);
+  $('map').href=C.map;
   var F=function(d){return d.getFullYear()+P(d.getMonth()+1)+P(d.getDate())+'T'+P(d.getHours())+P(d.getMinutes())+'00'},E=ED,
       T='Katb El-Ketab of '+C.n1+' & '+C.n2,V=C.venue+' '+C.city;
   $('cal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(T)+'&dates='+F(D)+'/'+F(E)+'&location='+encodeURIComponent(V);
